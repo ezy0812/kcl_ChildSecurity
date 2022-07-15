@@ -1,0 +1,73 @@
+/* 样式重置 */
+*{margin: 0;padding: 0;}
+body{width: 100%; font-size: 12px;color: #333;font-family: "microsoft yahei";
+background-color: rgb(210,210,210);
+height: 100%;
+}
+a{text-decoration: none;font-size: 12px;color: #333;}
+img{border: none;vertical-align: middle;}
+ul,ol{list-style: none;}
+.clear{height: auto;overflow: hidden;}
+html{height: 100%;width: 100%;}
+.main{height: 100%;width: 100%;}
+.content{
+	width: 100%;
+    height: 100%;
+    background: url('../images/index.jpeg') no-repeat center;
+    background-size: cover;
+    overflow: hidden;
+}
+.header{
+    background-color: rgb(0, 0, 4);
+    position: relative;
+    font-size: 30px;
+    width: 100%;
+    height: 40px;
+    font-weight: 600;
+    padding: 10px;
+    color: rgb(216, 241, 249);
+    user-select: none;
+}
+.header-left{
+    position: absolute;
+    left: 40px;
+    cursor: pointer;
+}
+.header-conter{
+    left: 50%;
+    position: absolute;
+    cursor: pointer;
+    transform: translate(-50%,0);
+}
+.content-main{
+    text-align: center;
+    color: rgb(216, 241, 249);
+    font-size: 24px;
+    font-weight: 600;
+    margin: 200px auto;
+    width: 400px;
+    user-select: none;
+}
+.content-main{
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+.content-main .play,.content-main .about{
+    width: 80px;
+    margin: 70px auto;
+    padding: 10px 20px;
+    background: rgb(50, 50, 62);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.8s;
+    opacity: 0;
+}
+.play{
+    transform:  translateZ(-500px);
+}
+.about{
+    transform:  translateZ(-500px);
+}
+.play:hover,.about:hover{
+    background-color: rgb(0, 0, 4);
+}

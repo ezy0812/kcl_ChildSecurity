@@ -1,0 +1,84 @@
+/* 样式重置 */
+*{margin: 0;padding: 0;}
+body{
+    width: 100%; font-size: 12px;color: #333;font-family: "microsoft yahei";
+    background-color: rgb(210,210,210);
+    height: 100%;
+}
+a{text-decoration: none;font-size: 12px;color: #333;}
+img{border: none;vertical-align: middle;}
+ul,ol{list-style: none;}
+.clear{height: auto;overflow: hidden;}
+html{height: 100%;width: 100%;}
+.main{height: 100%;width: 100%;}
+.content{
+	width: 100%;
+    height: 100%;
+    background: url('../images/dangers.webp') no-repeat center;
+    background-size: cover;
+    overflow: auto;
+    user-select: none;
+    position: relative;
+    /* height: auto; */
+}
+.header{
+    background-color: rgb(0, 0, 4);
+    position: relative;
+    font-size: 30px;
+    width: 100%;
+    height: 40px;
+    font-weight: 600;
+    padding: 10px;
+    color: rgb(216, 241, 249);
+    user-select: none;
+}
+
+.header-left{
+    position: absolute;
+    left: 40px;
+    cursor: pointer;
+}
+
+.header-conter{
+    left: 50%;
+    position: absolute;
+    cursor: pointer;
+    transform: translate(-50%,0);
+}
+.main-content{
+    width: 800px;
+    margin: 60px auto;
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+}
+.main-content2{
+    width: 60%;
+    margin: 0 auto;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 30px;
+    line-height: 100px;
+}
+.main-content2 div:nth-child(1),.main-content2 div:nth-child(2){
+    background-color: white;
+    padding: 5px 10px;
+    line-height: 80px;
+    border: 4px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    color: gray;
+}
+img{
+    height: 100%;
+    border-radius: 10px;
+}
+.Well{
+    width: 200px;
+    background-color: white;
+    text-align: center;
+    font-size: 20px;
+    margin: 0 auto;
+    opacity: 0;
+}

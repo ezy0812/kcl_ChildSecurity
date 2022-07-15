@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cautious.html</title>
+    <link rel="stylesheet" href="css/maliao-before.css">
+</head>
+<body>
+    <div class="main">
+        <div class="content">
+            <div class="header">
+                <div class="header-left">ChildSecurity</div>
+                <div class="header-conter">Instructions</div>
+            </div>
+            <div class="main-content">
+                <div class="content1">
+                    Here is a coin eating game where you manipulate a blue square and use the up and left and right keyboard keys to move it to eat the coins
+                </div>
+                <div class="content2">
+                    Each time you eat a coin, a pop-up will appear with a definition of cyberbullying and what to do about it. Please read it carefully, you will get something out of it!
+                </div>
+                <button class="next">NEXT</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+window.onload = function(){
+    window.sessionStorage.setItem('learning5',3);
+    window.sessionStorage.setItem('learning7',2);
+    let ChildSecurity = document.querySelector('.header-left');
+    ChildSecurity.addEventListener('click',function () {
+        window.location.href = './index.html'
+    })
+    
+    let next = document.querySelector('.next');
+    next.addEventListener('click',function(){
+        window.location.href = './maliao.html'
+    })
+}
+</script>
