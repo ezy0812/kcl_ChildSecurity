@@ -39,7 +39,7 @@ window.onload = function () {
             sessionStorage.setItem('pjPassword', password);
             setTimeout(() => {
                 message.style.cssText = 'display:none;';
-            }, 8000)
+            }, 1000)
         } else {
             message3.style.cssText = 'display:block;';
             setTimeout(() => {
@@ -56,7 +56,7 @@ window.onload = function () {
             document.querySelector('.message2').style.cssText = 'display:block;'
             setTimeout(() => {
                 document.querySelector('.message2').style.cssText = 'display:none;'
-            }, 8000)
+            }, 1000)
             //隐藏注册
             registerForm.style.cssText = 'display: none;'
         } else {
@@ -77,14 +77,9 @@ window.onload = function () {
 How to use this tool?
 Simply type in the following:
 hydra -l admin -P top_100.txt small-game.com
+
                     `
                     input1.appendChild(child);
-                }else{
-                    let message4 = document.querySelector('.message4')
-                    message4.style.cssText = 'display: block;'
-                    setTimeout(()=>{
-                        message4.style.cssText = 'display: none;'
-                    },8000)
                 }
             }
         }
@@ -178,16 +173,15 @@ hydra -l admin -P top_100.txt small-game.com
 
                     `
                         input2.appendChild(child9);
+                        document.querySelector('.next').style.cssText = 'display:block'
                     }, 4000)
-                    setTimeout(()=>{
+
+                    document.querySelector('.next').addEventListener('click',function(){
                         window.location.href = 'password-quiz.html'
-                    },8000)
-                }else{
-                    let message5 = document.querySelector('.message5')
-                    message5.style.cssText = 'display: block;'
-                    setTimeout(()=>{
-                        message5.style.cssText = 'display: none;'
-                    },8000)
+                    })
+                    // setTimeout(()=>{
+                    //     window.location.href = 'password-quiz.html'
+                    // },30000)
                 }
             }
         }

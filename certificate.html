@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<link rel="stylesheet" href="./css/certificate.css">
+</head>
+<body>
+	<div class="content">
+		<div class="header">
+			<div class="header-left">ChildSecurity</div>
+			<div class="header-conter">Certificate</div>
+		</div>
+		<div id="capture">
+			<div class="capture-center">
+				<div class="capture-title">
+					Certificate of completion
+				</div>
+				<div class="capture-main">
+					<div class="left">
+						<div class="title1">Please fill in your name and select the Save Certificate button to save your certificate of completion.</div>
+						<div class="title1">Note: You MUST save your certificate now. If you don't save the certificate on this screen you will have to retake the course in order to get another certificate.</div>
+					</div>
+					<div class="right">
+						<div class="right-title">Certificate of completion</div>
+						<input type="text" class="input" placeholder="Please enter your name:">
+						<div class="title2">Has completed</div>
+						<div class="title2">ChildSecurity Training 2022</div>
+						<div class="title2 button">Save Certificate</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script src="./js/min.js"></script>
+<script>
+	document.querySelector('.header-left').addEventListener('click',function() {
+		window.location.href = './index.html'
+	})
+	window.onload = function(){
+		
+	document.querySelector('.button').addEventListener('click',save)
+    function save(){
+		html2canvas(document.querySelector("#capture")).then(canvas => {
+        // document.body.appendChild(canvas)
+		console.log(canvas.toDataURL())
+        var dataUrl = canvas.toDataURL()
+        var newImg = document.createElement('img')
+        newImg.src = dataUrl
+		newImg.style.cssText = 'display:none;'
+        document.body.appendChild(newImg)
+			// 图片导出为 png 格式
+		var type = 'png';
+		var imgData = document.getElementsByTagName("img")[0].src;
+		var _fixType = function(type) {
+		    type = type.toLowerCase().replace(/jpg/i, 'jpeg');
+		    var r = type.match(/png|jpeg|bmp|gif/)[0];
+		    return 'image/' + r;
+		};
+		// 加工image data，替换mime type
+		imgData = imgData.replace(_fixType(type),'image/octet-stream');
+		/**
+		 * 在本地进行文件保存
+		 * @param  {String} data     要保存到本地的图片数据
+		 * @param  {String} filename 文件名
+		 */
+		var saveFile = function(data, filename){
+		    var save_link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
+		    save_link.href = data;
+		    save_link.download = filename;
+		    var event = document.createEvent('MouseEvents');
+		    event.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+		    save_link.dispatchEvent(event);
+		};
+		// 下载后的问题名
+		var filename = 'ChildSecurity'  + '.' + type;
+		// download
+		saveFile(imgData,filename);
+     });
+		
+	}
+	}
+</script>

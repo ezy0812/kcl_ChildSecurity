@@ -25,13 +25,13 @@ window.onload = function(){
         setTimeout(() => {
             document.querySelector('.title2').style.cssText = "opacity:0;"
             window.location.href = 'skillTree.html'
-        }, 8000);
+        }, 5000);
        }else{//回答错误
         console.log('回答错误');
         document.querySelector('.title1').style.cssText = "opacity:1;"
         setTimeout(() => {
             document.querySelector('.title1').style.cssText = "opacity:0;"
-        }, 8000);
+        }, 1000);
        }
     })
 }

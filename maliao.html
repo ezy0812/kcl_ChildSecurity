@@ -106,6 +106,21 @@ h2 {
 .content{
     height: 300px;
 }
+.next{
+    color: white;
+    font-size: 14px;
+    width: 60px;
+    line-height: 20px;
+    background: rgb(22, 155, 213);
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    float: right;
+    margin-right: 450px;
+    /* visibility: visible; */
+    visibility: hidden;
+}
+
 </style>
 <body>
 <div class="header">
@@ -115,6 +130,7 @@ h2 {
 <div style="color:white;">points:<span class="score">0</span></div>
 <div style="color: white;height: 400px;" class="text"></div>
 <div class="content"></div>
+<div class="next">next</div>
 </body>
 </html>
 <script>
@@ -574,9 +590,10 @@ Level.prototype.playerTouched = function(type, actor) {
     })) {
       console.log('吃到了所有金币');
         // 如果全吃到则进入答题界面
-        setTimeout(()=>{
+        document.querySelector('.next').style.cssText = 'visibility: visible;'
+        document.querySelector('.next').addEventListener('click',function(){
             window.location.href = 'quiz.html'
-        },1500)
+        })
       this.status = "won";
       this.finishDelay = 1;
     }
@@ -628,7 +645,7 @@ DOMDisplay.prototype.drawBackground = function() {
 		rowElement.style.height = scale + "px";
         // 在tr中加入td元素，并且增加class的命名,type看情况而定
 		row.forEach(function(type) {
-			rowElement.appendChild(element("td", type));
+		    rowElement.appendChild(element("td", type));
 		});
 	});
 	return table;

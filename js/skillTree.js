@@ -12,8 +12,10 @@ window.onload = function(){
         window.sessionStorage.setItem('learning0',3);
     }
     let learning5 = window.sessionStorage.getItem('learning5');
+    window.sessionStorage.setItem('learning6',3)
+    let learning6 = window.sessionStorage.getItem('learning6');
     let learning7 = window.sessionStorage.getItem('learning7');
-    if(learning5 == 3 && learning7 == 3){
+    if(learning5 == 3 && learning6 == 3 && learning7 == 3){
         window.sessionStorage.setItem('learning4',3);
     }
     let learning9 = window.sessionStorage.getItem('learning9');
@@ -138,5 +140,16 @@ window.onload = function(){
         }else if(window.sessionStorage.getItem('learning'+i)==3){
             ellipses[i].setAttribute('class','ellipse background-color3')
         }
+    }
+
+    let count = 0;
+    for(let i = 0; i < 16; i++){
+        if(window.sessionStorage.getItem('learning'+i)==3){
+            count ++;
+        }
+    }
+
+    if(count>=16){
+        document.querySelector('.pointer').style.cssText = 'display: block;'
     }
 }

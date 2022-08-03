@@ -123,7 +123,7 @@ form{
 .login{
     display: none;
 }
-.message,.message2,.message3,.message4,.message5{
+.message,.message2,.message3{
     position: absolute;
     color: black;
     z-index: 100;
@@ -140,7 +140,7 @@ form{
 /* 模拟终端 */
 .root{
     width: 600px;
-    height: 500px;
+    height: 700px;
     background-color: black;
     margin: 0 auto;
     color: white;
@@ -194,5 +194,18 @@ input{
     color: rgb(72, 142,155);
 }
 .text1,.text2{
-    width: 70%;
+    width: 50%;
+}
+.next{
+    color: white;
+    font-size: 14px;
+    width: 60px;
+    line-height: 20px;
+    background: rgb(22, 155, 213);
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    float: right;
+    margin-right: 30px;
+    display: none;
 }
